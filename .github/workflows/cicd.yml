@@ -23,7 +23,7 @@ jobs:
           run: npm run build 
         
         - name: Docker login
-          run: echo "${{secrets.DOCKERHUB.TOKENACCESS}}" | docker login -u "${{secrets.DOCKERHUB.USERNAME}}"
+          run: echo "${{secrets.DOCKERHUB_TOKENACCESS}}" | docker login -u "${{secrets.DOCKERHUB_USERNAME}}" --password-stdin
         
         - name: Build and push Docker image
           run: |
